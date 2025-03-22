@@ -36,8 +36,9 @@ public class testDemo extends envTarget {
         driver.findElement(By.name("password_confirmation")).sendKeys("1234567");
         driver.findElement(By.xpath("//*[@type='submit'][@class='action submit primary']"));
         wait.until(
-                ExpectedConditions.visibilityOfElementLocated()
-        )
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//header/div[2]/a"))
+        );
+        driver.findElement(By.xpath("//header/div[2]/a")).click();
         driver.quit();
     }
 }
