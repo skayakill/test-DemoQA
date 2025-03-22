@@ -39,6 +39,14 @@ public class testDemo extends envTarget {
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//header/div[2]/a"))
         );
         driver.findElement(By.xpath("//header/div[2]/a")).click();
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='action more button'][contains(text(),'Shop New Yoga')]"))
+        );
+        driver.findElement(By.xpath("//span[@class='base'][contains(text(),'Home Page')]"));
+        driver.findElement(By.xpath("//span[@class='action more button'][contains(text(),'Shop New Yoga')]")).click();
+        wait.until(
+                ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"page-title-heading\"]"))
+        );
         driver.quit();
     }
 }
