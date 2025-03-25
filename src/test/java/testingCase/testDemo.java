@@ -1,6 +1,7 @@
 package testingCase;
 
 import config.envTarget;
+import pagesObject.pagesName;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
 import org.junit.jupiter.api.Test;
@@ -26,8 +27,8 @@ public class testDemo extends envTarget {
         wait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='base'][contains(text(), 'Create New Customer Account')]"))
         );
-        driver.findElement(By.id("firstname")).sendKeys("veil");
-        driver.findElement(By.name("lastname")).sendKeys("armstrong");
+        pagesName inputName =new pagesName(driver);
+        inputName.inputData("veil", "armstrong");
         driver.findElement(By.name("email")).sendKeys("veilarms@areamail.com");
         Random rand = new Random();
         int userRand = rand.nextInt(1000);
